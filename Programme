@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main() 
+{ 
+	int Sr=7,Dr=5; // Number of process
+	printf("Please Enter number of process and resources:	");
+	scanf("%d%d",&Sr,&Dr);
+	const int S=Sr,D=Dr; // Available resource
+    int avail[20];
+    printf("Please Enter number of available resources:	");
+	for(int i=0;i<D;i++)
+	{
+		scanf("%d",&avail[i]);
+	}
+    int maxm[10][10];
+    for(int i=0;i<S;i++)
+	{
+		printf("Enter maximum required resources for S%d:	",i+1);
+		for(int j=0;j<D;j++)
+		{
+			scanf("%d",&maxm[i][j]);
+		}
+	}
+	 // Allocated Resource to process
+    int allot[10][10];   
+    for(int i=0;i<S;i++)
+	{
+		printf("Enter resources allocated by S%d:	",i+1);
+		for(int j=0;j<D;j++)
+		{
+			scanf("%d",&allot[i][j]);
+		}
+	}
