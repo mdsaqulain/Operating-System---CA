@@ -27,6 +27,15 @@ int main()
 		printf("Enter resources allocated by S%d:	",i+1);
 		for(int j=0;j<D;j++)
 		{
+		
 			scanf("%d",&allot[i][j]);
 		}
 	}
+// Required Resource
+   int need[S][D]; 
+  
+    // Calculating Need(Required Resource by Process)
+	for (int i = 0 ; i < S ; i++) 
+        for (int j = 0 ; j < D ; j++) 
+   
+            need[i][j] = maxm[i][j] - allot[i][j];
