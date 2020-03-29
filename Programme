@@ -39,3 +39,30 @@ int main()
         for (int j = 0 ; j < D ; j++) 
    
             need[i][j] = maxm[i][j] - allot[i][j];
+	    // Mark all process as not finished
+	  bool finish[S] = {0}; 
+    int safeSeq[S]; 
+   
+    int work[D]; 
+    for (int i = 0; i < D ; i++) 
+        work[i] = avail[i]; 
+  
+    int count = 0; 
+	while (count < S) 
+    {  
+        bool found = false; 
+        for (int s = 0; s < S; s++) 
+        { 
+            if (finish[s] == 0) 
+            { 
+                int j; 
+                for (j = 0; j < D; j++) 
+                    if (need[s][j] > work[j]) 
+                        break; 
+   
+                // If all needs of S were satisfied
+				if (j == D) 
+                { 
+                    for (int k = 0 ; k < D ; k++) 
+                        work[k] += allot[s][k]; 
+   
