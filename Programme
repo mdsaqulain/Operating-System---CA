@@ -66,3 +66,19 @@ int main()
                     for (int k = 0 ; k < D ; k++) 
                         work[k] += allot[s][k]; 
    
+// Add this process to safe sequence
+					safeSeq[count++] = s; 
+  
+                    finish[s] = 1; 
+  
+                    found = true; 
+                } 
+            } 
+        }
+        // If we could not find a next process in safe sequence
+		if (found == false) 
+        { 
+            printf("System is not in safe");  
+        } 
+    } 
+  
